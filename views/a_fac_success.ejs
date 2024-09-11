@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(3, 0, 102, 0.5), rgba(118, 1, 93, 0.5));
+    background-size: cover;
+    background-position: center top;
+    font-family: 'Trebuchet MS';
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Align content at the top */
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(54, 52, 52, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 375px;
+    height: 290px; /* Remove fixed height */
+    margin-top: 50px; /* Add margin to separate from header */
+}
+
+.container h1 {
+    font-size: 36px;
+    color: rgb(76, 45, 45);
+    margin-bottom: 50px;
+    text-decoration:underline;
+  }
+.container .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 10px 70px;
+    font-size: 20px;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: rgb(43, 33, 33);
+    border: 2px transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 7px 3px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 45px;
+}
+
+.text {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <%- include('admin_head.ejs') %>
+    </header>
+    <main>
+        <div class="container">
+
+
+                <div class="menu">
+                    <p class="text">Form submitted successfully</p>
+                    <button class="button" onclick="location.href='/admin_fac'">Okay</button>
+                    
+                </div>
+        </div>
+
+    </main>
+</body>
+</html>

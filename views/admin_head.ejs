@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+    }
+    header {
+        background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+        color: rgb(95, 85, 85);
+        padding: 10px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    nav a {
+        color: rgb(95, 85, 85);
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    nav a:hover {
+        background-color: #e2f095;
+    }
+    .active {
+        background-color: #e2f095 !important; /* Use !important to override other styles */
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Admin</h1>
+    <nav>
+        <a href="/admin_home" onclick="setHomeActive()">Home</a>
+        <a href="/admin_stud" onclick="setActiveTab(this)">Student Register</a>
+        <a href="/admin_fac" onclick="setActiveTab(this)">Faculty Register</a>
+        <a href="/admin_det" onclick="setActiveTab(this)">Details</a>
+        <a href="/admin_res" onclick="setActiveTab(this)">Results</a>
+        <a href="/admin_que" onclick="setActiveTab(this)">Queries</a>
+        <a href="/login" onclick="setActiveTab(this)">Logout</a>
+    </nav>
+</header>
+<script>
+    // Function to set the active tab based on the current URL
+    function setActiveTabByUrl() {
+        var currentUrl = window.location.pathname;
+        var tabs = document.querySelectorAll('nav a');
+        tabs.forEach(tab => {
+            if (tab.getAttribute('href') === currentUrl) {
+                tab.classList.add('active');
+            }
+        });
+    }
+    
+    // Call the function when the page loads
+    window.onload = setActiveTabByUrl;
+
+    function setActiveTab(element) {
+        // Remove 'active' class from all tabs
+        var tabs = document.querySelectorAll('nav a');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Add 'active' class to the clicked tab
+        element.classList.add('active');
+    }
+    
+    // Add this function to handle 'Home' tab specially
+    function setHomeActive() {
+        // Remove 'active' class from all tabs
+        var tabs = document.querySelectorAll('nav a');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Add 'active' class to the 'Home' tab
+        tabs[0].classList.add('active'); // Assuming 'Home' tab is the first tab
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(3, 0, 102, 0.5), rgba(118, 1, 93, 0.5));
+            background-size: cover;
+            background-position: center top;
+            font-family: 'Trebuchet MS';
+            display: flex;
+            flex-direction: column; /* Ensure content stacks vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Align content at the top */
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(54, 52, 52, 0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            height: auto; /* Remove fixed height */
+            margin-top: 20px; /* Add margin to separate from header */
+            padding: 20px;
+        }
+
+        h2 {
+            font-weight: 300;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+            position: relative; /* Position relative for absolute positioning */
+            margin-bottom: 20px; /* Add margin below the title */
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -20px; /* Adjust this value to control the distance from the text */
+            left: 0;
+            width: 100%; /* Ensure the line spans the entire width */
+            height: 2px; /* Adjust the thickness of the line */
+            background-color: white;
+        }
+
+        .profile {
+            padding: 30px 40px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Align items vertically */
+        }
+
+        label {
+            font-weight: 300;
+            margin-right: 10px;
+            font-size: 18px; /* Add some space between label and span */
+        }
+
+        span {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Include your header file -->
+        <%- include('fac_head.ejs') %>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Faculty Profile</h2>
+            <div class="profile">
+                <div class="field">
+                    <label for="facultyId">Faculty ID:</label>
+                    <span><%= facultyData.Faculty_Id %></span>
+                </div>
+                <div class="field">
+                    <label for="name">Name:</label>
+                    <span><%= facultyData.Name %></span>
+                </div>
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <span><%= facultyData.Email %></span>
+                </div>
+                <div class="field">
+                    <label for="branch">Branch:</label>
+                    <span><%= facultyData.Branch %></span>
+                </div>
+                <div class="field">
+                    <label for="subject">Subject:</label>
+                    <span><%= facultyData.Subject %></span>
+                </div>
+                <div class="field">
+                    <label for="experience">Experience:</label>
+                    <span><%= facultyData.Experience %> years</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

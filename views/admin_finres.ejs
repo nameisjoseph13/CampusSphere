@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Results</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(3, 0, 102, 0.5), rgba(118, 1, 93, 0.5));
+            background-size: cover;
+            background-position: center top;
+            font-family: 'Trebuchet MS';
+            display: flex;
+            flex-direction: column; /* Ensure content stacks vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Align content at the top */
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(54, 52, 52, 0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 90%; /* Change the width as per your requirement */
+            max-width: 800px; /* Add max-width to prevent it from becoming too wide */
+            height: auto; /* Remove fixed height */
+            margin-top: 20px; /* Add margin to separate from header */
+            padding: 20px; /* Add padding for better spacing */
+        }
+
+        h2 {
+            font-weight: 300;
+            text-align: center;
+            margin: 0 0 20px;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px; /* Add some space below the table */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        th:first-child,
+        td:first-child {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none; /* Remove bottom border for the last row */
+        }
+
+        thead th {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1); /* Alternate row color */
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Hover color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Include your header file -->
+        <%- include('admin_head.ejs') %>
+    </header>
+    <main>
+        <div class="container">
+            <h2>CSE Student Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>NNDL</th>
+                        <th>WT</th>
+                        <th>CNS</th>
+                        <th>CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cseData.forEach(student => { %>
+                        <tr>
+                            <td><%= student.Roll_No %></td>
+                            <td><%= student.Name %></td>
+                            <td><%= student.NNDL %></td>
+                            <td><%= student.WT %></td>
+                            <td><%= student.CNS %></td>
+                            <td><%= student.Cgpa %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h2>ECE Student Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>MPI</th>
+                        <th>DLD</th>
+                        <th>SS</th>
+                        <th>CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% eceData.forEach(student => { %>
+                        <tr>
+                            <td><%= student.Roll_No %></td>
+                            <td><%= student.Name %></td>
+                            <td><%= student.MPI %></td>
+                            <td><%= student.DLD %></td>
+                            <td><%= student.SS %></td>
+                            <td><%= student.Cgpa %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
