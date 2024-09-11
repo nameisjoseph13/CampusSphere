@@ -14,4 +14,4 @@ Welcome to the **College Management System** – a comprehensive solution for ef
 **Database:** MySQL
 
 ## Website
-
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/nameisjoseph13/CampusSphere/blob/master/assets/Screenshot%20(147).png)
